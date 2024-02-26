@@ -58,13 +58,13 @@ window.onload = function () {
           const { title, thumbnail, description } = comic;
           // Create HTML structure for comic information
           let div = document.createElement("div");
-          div.classList.add("character-info-container");
+          div.classList.add("comic-character-info-container");
   
           div.innerHTML = `
-          <div class="character-poster">
+          <div class="comic-character-poster">
             <img src="${thumbnail.path}.jpg" alt="">
           </div>
-          <div class="character-info white-text">
+          <div class="comic-character-info white-text">
             <h3>${title}</h3>
             <br>
             <p>${description || "description not found"}</p>

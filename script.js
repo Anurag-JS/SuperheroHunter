@@ -73,7 +73,14 @@ searchBtn.addEventListener("click", () => {
       return response.json();
     })
     .then((data) => {
-      let result = data.data.results[0];
+      console.log(data);
+      let results = data.data.results;
+      if (results.length === 0) {
+        // Handle case when no results are found
+        alert("No Result Found");
+        return;
+      }
+      let result = results[0];
       const { id, name, thumbnail } = result;
 
       let favoriteData = getStorage();
@@ -97,7 +104,7 @@ searchBtn.addEventListener("click", () => {
       let div = document.createElement("div");
       div.classList.add("character-card");
       div.setAttribute("id", id);
-      let path = `info/info.html#${id}`;
+      let path = `views/info/info.html#${id}`;
       div.innerHTML = `
         <img class="poster" src=${thumbnail.path}.jpg alt="">
         <div class="card-body">

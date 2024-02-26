@@ -1,3 +1,39 @@
+@keyframes movingGradient {
+    0% {
+      background: linear-gradient(90deg, #FF0000, #FF4500); /* Red to OrangeRed */
+    }
+    10% {
+      background: linear-gradient(90deg, #FF4500, #FFFF00); /* OrangeRed to Yellow */
+    }
+    20% {
+      background: linear-gradient(90deg, #FFFF00, #32CD32); /* Yellow to LimeGreen */
+    }
+    30% {
+      background: linear-gradient(90deg, #32CD32, #008000); /* LimeGreen to Green */
+    }
+    40% {
+      background: linear-gradient(90deg, #008000, #00CED1); /* Green to DarkTurquoise */
+    }
+    50% {
+      background: linear-gradient(90deg, #00CED1, #1E90FF); /* DarkTurquoise to DodgerBlue */
+    }
+    60% {
+      background: linear-gradient(90deg, #1E90FF, #9400D3); /* DodgerBlue to DarkViolet */
+    }
+    70% {
+      background: linear-gradient(90deg, #9400D3, #800080); /* DarkViolet to Purple */
+    }
+    80% {
+      background: linear-gradient(90deg, #800080, #FF69B4); /* Purple to HotPink */
+    }
+    90% {
+      background: linear-gradient(90deg, #FF69B4, #FF0000); /* HotPink to Red */
+    }
+    100% {
+      background: linear-gradient(90deg, #FF0000, #FF4500); /* Red to OrangeRed */
+    }
+  }
+
 /* Resetting default margin, padding, and box-sizing */
 * {
     margin: 0;
@@ -23,6 +59,7 @@ body{
     --white: #EAEAEA;
     --blue: #08D9D6;
     --dblue: #040f4b;
+    --gyellow: greenyellow;
 }
 
 /* Setting margin for all sections */
@@ -64,6 +101,7 @@ nav ul {
 
 nav li {
     margin-right: 1rem;
+    font-size: 1.7rem;
 }
 
 nav a {
@@ -76,21 +114,34 @@ nav .logo a {
     font-size: 2rem;
     color: goldenrod;
 }
+nav .logo a:hover {
+    color: red;
+}
 
 /* Styling for search section */
 .search-section {
     display: flex;
     justify-content: center;
-    height: 2rem;
+    height: 3rem;
 }
 
 .search-section input {
     padding: 3px 0.5rem;
     font-size: 1.2rem;
     border-radius: 20px;
-    border-color: #FF2E63;
+    border: 5px solid greenyellow;
+    
 }
-
+#searchBtn:hover{
+    background-color: black;
+    color: white;
+    border: 5px solid red;
+}
+#searchBox:hover{
+    background-color: black;
+    color: white;
+    border: 5px solid red;
+}
 .search-section input[type="text"] {
     width: 60%;
 }
@@ -113,11 +164,19 @@ nav .logo a {
 .character-card {
     width: 400px;
     padding: 1rem;
-    border: 5px solid var(--red);
+    border: 5px solid var(--gyellow);
     border-radius: 1rem;
     margin-top: 2rem;
     background-color: aqua;
 }
+
+
+ 
+.character-card:hover {
+    animation: movingGradient 3s infinite;
+    border: 5px solid black;
+  }
+  
 
 .character-card img {
     width: 100%;
