@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags for defining character set, browser compatibility, and viewport settings -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title of the webpage -->
+    <title>Superhero hunter</title>
+
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigation section -->
+    <nav>
+      <ul>
+        <!-- Logo link -->
+        <li class="logo"><a href="#">Marval</a></li>
+        <!-- Link to favorite page -->
+        <li><a href="views/favorite/favorite.html">Favorites</a></li>
+      </ul>
+    </nav>
+
+    <!-- Search section -->
+    <section>
+      <div class="search-section">
+        <!-- Input field for search -->
+        <input type="text" placeholder="Search your Superhero here" id="searchBox"/>
+        <!-- Button for initiating search -->
+        <input type="button" value="Search" id="searchBtn"/>
+      </div>
+    </section>
+
+    <!-- Section for displaying search results -->
+    <section>
+      <div id="searchResult"></div>
+    </section>
+
+    <!-- Section for displaying characters -->
+    <section class="box"> 
+      <h1 class="white-text text-center">Superhero Characters :</h1>
+      <!-- Container for displaying characters -->
+      <div class="caracters" id="characters-container">
+        <!-- Placeholder message while loading -->
+        <h2 class="white-text">Fetching data, please wait...</h2>
+      </div>
+    </section>
+
+    <!-- Scripts for JavaScript functionalities -->
+    <script src="script.js"></script>
+    <script src="views/favorite/favorite.js"></script>
+  </body>
+</html>
