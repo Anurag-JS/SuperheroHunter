@@ -1,6 +1,13 @@
 // Get reference to the characters container element
 let charactersContainer = document.getElementById("characters-container");
-let apiKey = "https://gateway.marvel.com/v1/public/characters?ts=1&apikey=d51901e0cddf18f727fd9890c85bf119&hash=3c0807be06a02606d35aa7c35b9635aa";
+
+// Creating apiKeys
+let keys = {
+  public : 'd51901e0cddf18f727fd9890c85bf119',
+  private: '3c0807be06a02606d35aa7c35b9635aa'
+}
+let apiKey = `https://gateway.marvel.com/v1/public/characters?&ts=1&apikey=${keys.public}&hash=${keys.private}`;
+
 
 // Function to fetch data from Marvel API
 async function fetchData() {
@@ -64,9 +71,9 @@ searchBtn.addEventListener("click", () => {
   let query = searchBox.value;
   searchBox.value = "";
 
-  // Construct URL for Marvel API search
-  let url = `https://gateway.marvel.com/v1/public/characters?name=${query}&ts=1&apikey=d51901e0cddf18f727fd9890c85bf119&hash=3c0807be06a02606d35aa7c35b9635aa`;
-
+  // Construct URL & keys for Marvel API search
+  let url = `https://gateway.marvel.com/v1/public/characters?name=${query}&ts=1&apikey=${keys.public}&hash=${keys.private}`;
+  
   // Fetch data from Marvel API based on search query
   fetch(url)
     .then((response) => {
